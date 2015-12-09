@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/backbone.js"></script>
+
+<input type="button" value="1" />
+<ul>
+	<li>121212</li>
+	<li>121212</li>
+	<li>121212</li>
+	<li>121212</li>
+</ul>
+
+
+<script type="text/javascript">
+$(function () {
+	var V = Backbone.View.extend({
+		el:$('body'),
+		events:{
+			'click input':'aaa',
+			'mouseover li':'bbb'
+		},
+		aaa:function () {
+			alert(123);
+		},
+		bbb:function () {
+			alert(456);
+		}
+	});
+	var view = new V;
+})
+
+</script>
+
+</body>
+</html>
