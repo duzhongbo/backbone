@@ -27,13 +27,26 @@
 
 
 // 默认default 数据池
+// var M = Backbone.Model.extend({
+// 	defaults : {
+// 		name:'hello'
+// 	}
+// });
+// var model = new M;
+// alert(model.get('name'));
+
 var M = Backbone.Model.extend({
-	defaults : {
-		name:'hello'
+	aaa:function () {
+		alert(123);
 	}
 });
-var model = new M;
-alert(model.get('name'));
+var ChildM = M.extend();
+var model = new ChildM;
+model.aaa();
+
+
+
+
 </script>
 
 </body>
