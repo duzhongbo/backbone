@@ -12,23 +12,38 @@
 
 <script type="text/javascript">
 
+// Backbone.sync = function (method, model) {
+// 	alert(method + "："+JSON.stringify(model));
+// 	model.id = 1;
+// };
+
+// var M = Backbone.Model.extend({
+// 	defaults : {
+// 		name : 'hello'
+// 	},
+// 	url : '/user'
+// });
+
+// var m = new M;
+// m.save();
+// m.save({name:'hi'});
+
+
 Backbone.sync = function (method, model) {
 	alert(method + "："+JSON.stringify(model));
-	model.id = 1;
 };
 
-var M = Backbone.Model.extend({
-	defaults : {
-		name : 'hello'
+var C = Backbone.Collection.extend({
+	initialize: function () {
+		this.on('reset',function () {
+			alert(123);
+		})
 	},
-	url : '/user'
+	url:'/users'
 });
 
-var m = new M;
-m.save();
-m.save({name:'hi'});
-
-
+var models = new C;
+models.fetch();
 
 </script>
 
