@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/backbone.js"></script>
+
+<script type="text/javascript">
+
+var M = Backbone.Model.extend({
+	defaults : {
+		name : 'hello'
+	},
+	initialize : function () { // 初始化构造函数
+		this.on('change',function () {
+			alert(123);
+		})
+	}
+});
+
+var model = new M;
+model.set('name','hi');
+
+
+
+
+</script>
+
+</body>
+</html>
