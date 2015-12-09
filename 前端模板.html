@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/backbone.js"></script>
+
+<script type="text/javascript">
+
+$(function () {
+	var M = Backbone.Model.extend({
+		defaults : {
+			name : 'hello'
+		}
+	});
+
+	var V = Backbone.View.extend({
+		initialize : function () {
+			this.listenTo(this.model,'change',this.show);
+		},
+		show:function (model) {
+			$('body').append(this.template(this.model.toJSON()));
+		},
+		template:_.template($('#template').html())
+	});
+
+	var m = new M;
+	var v = new V({model:m});
+	m.set('name','hi');
+	
+})
+
+
+
+
+</script>
+
+
+<script type="text/template" id="template">
+
+<div><%= name %></div>	
+
+</script>
+
+</body>
+</html>
