@@ -11,9 +11,20 @@
 <script type="text/javascript" src="js/backbone.js"></script>
 
 <script type="text/javascript">
-var model = new Backbone.Model();
-model.set('name','hello');
-alert(model.get('name'));
+// 模型的使用
+// var model = new Backbone.Model();
+// model.set('name','hello');
+// alert(model.get('name'));
+
+// 集合的使用
+var model_1 = new Backbone.Model({'name':'hello'});
+var model_2 = new Backbone.Model({'name':'hi'});
+
+var models = new Backbone.Collection();
+models.add(model_1);
+models.add(model_2);
+
+alert(JSON.stringify(models));
 
 </script>
 
