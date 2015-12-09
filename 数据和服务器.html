@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/backbone.js"></script>
+
+<script type="text/javascript">
+
+Backbone.sync = function (method, model) {
+	alert(method + "："+JSON.stringify(model));
+	model.id = 1;
+};
+
+var M = Backbone.Model.extend({
+	defaults : {
+		name : 'hello'
+	},
+	url : '/user'
+});
+
+var m = new M;
+m.save();
+m.save({name:'hi'});
+
+
+
+</script>
+
+</body>
+</html>
