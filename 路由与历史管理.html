@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/backbone.js"></script>
+
+<script type="text/javascript">
+
+var Workspace = Backbone.Router.extend({
+	routes: {
+		'help':'help',// #help
+		'search/:query':'search',// #search/kiwis
+		'search/:query/p:page':'search'// #search/kiwis/p7
+	},
+	help:function () {
+		alert(1);
+	},
+	search:function (query, page) {
+		alert(2);
+	}
+});
+
+var w = new Workspace;
+Backbone.history.start();
+
+
+</script>
+
+</body>
+</html>
