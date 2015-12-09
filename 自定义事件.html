@@ -12,13 +12,27 @@
 
 <script type="text/javascript">
 
+// var M = Backbone.Model.extend({
+// 	defaults : {
+// 		name : 'hello'
+// 	},
+// 	initialize : function () { // 初始化构造函数
+// 		this.on('change',function () {
+// 			alert(123);
+// 		})
+// 	}
+// });
+
+// var model = new M;
+// model.set('name','hi');
+
 var M = Backbone.Model.extend({
 	defaults : {
 		name : 'hello'
 	},
 	initialize : function () { // 初始化构造函数
-		this.on('change',function () {
-			alert(123);
+		this.on('change:name',function (model) {
+			console.log(model);
 		})
 	}
 });
