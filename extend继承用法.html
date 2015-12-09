@@ -11,21 +11,29 @@
 <script type="text/javascript" src="js/backbone.js"></script>
 
 <script type="text/javascript">
+// var M = Backbone.Model.extend({
+// 	aaa:function () { // 实例方法
+// 		alert(123);
+// 	}
+// },{
+// 	bbb:function () { // 静态方法
+// 		alert(456);
+// 	}
+// });
+
+// var model = new M;
+// model.aaa();
+// M.bbb();
+
+
+// 默认default 数据池
 var M = Backbone.Model.extend({
-	aaa:function () { // 实例方法
-		alert(123);
-	}
-},{
-	bbb:function () { // 静态方法
-		alert(456);
+	defaults : {
+		name:'hello'
 	}
 });
-
 var model = new M;
-model.aaa();
-M.bbb();
-
-
+alert(model.get('name'));
 </script>
 
 </body>
