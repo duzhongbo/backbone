@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/backbone.js"></script>
+
+<script type="text/javascript">
+var M = Backbone.Model.extend({
+	aaa:function () { // 实例方法
+		alert(123);
+	}
+},{
+	bbb:function () { // 静态方法
+		alert(456);
+	}
+});
+
+var model = new M;
+model.aaa();
+M.bbb();
+
+
+</script>
+
+</body>
+</html>
